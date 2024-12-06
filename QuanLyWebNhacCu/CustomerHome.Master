@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerHome.master.cs" Inherits="QuanLyWebNhacCu.CustomerHome" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+        <a href="Default.aspx" class="logo"><i class="fa-solid fa-guitar"></i> WP03 Music</a>
+            <div class="menu">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/FormGioiThieu.aspx">GIỚI THIỆU</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/FormSanPham.aspx">SẢN PHẨM</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/FormTinTuc.aspx">TIN TỨC</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/FormTuyenDung.aspx">TUYỂN DỤNG</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/FormHoTro.aspx">HỖ TRỢ</asp:HyperLink>
+            </div>
+            <div class="menuright">
+                <asp:TextBox ID="txttimkiem" CssClass="tk" runat="server" placeholder="  Tìm kiếm ..."></asp:TextBox>
+                <asp:Button ID="btnTimKiem" CssClass="nuttk" runat="server" Text="Search" OnClick="btnTimKiem_Click" />
+                <asp:LinkButton ID="btngiohang" CssClass="giohang" runat="server" OnClick="btngiohang_Click"> <i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>
+                <div class="out-taikhoan">
+                    <asp:LinkButton ID="bnttaikhoan" CssClass="in-taikhoan" runat="server" CommandArgument= '<%# Eval("UserName") %>' OnClick="bnttaikhoan_Click"><i class="fa-solid fa-user"></i></asp:LinkButton>
+                     <asp:LinkButton ID="btnlogin" CssClass="login" runat="server" OnClick="btnlogin_Click">Login</asp:LinkButton>
+                </div>
+            </div>    
+    </header>
+        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+    </form>
+</body>
+</html>
